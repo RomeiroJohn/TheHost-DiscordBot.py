@@ -1,5 +1,8 @@
+from ast import Try
 import asyncio
 from distutils.util import change_root
+from logging import exception
+import string
 import discord  #discord.py
 from discord.ext import commands
 from decouple import config
@@ -24,10 +27,15 @@ async def sendhi(ctx):
 
 @bot.command(name="limpar")
 async def clear(ctx, amount=None):
-    if amount is None:
-        await ctx.send("Favor, digite uma quantidade para limpar")
+    try:
+        valor = int(amount)
+    except:
+        await ctx.send("O valor: **`{}`** é invalido".format(amount))
+    if valor < 0:
+        await ctx.send("Favor, Digite números positivos")
     else:
-        await ctx.channel.purge(limit=int(amount))
+        await ctx.channel.purge(limit=valor+1)
+
 
 
 apikey = config("apikey")
