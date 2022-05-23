@@ -1,2 +1,2 @@
 # TheHost-DiscordBot.py
-connecting wires from this bot everyday
+connecting wires of this bot everyday
