@@ -1,12 +1,12 @@
 from discord.ext import commands
 
 
-class clearchat(commands.Cog): # Talks with user
+class clearchat(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command(name="limpar") # Commands.command para @bot.commands)
+    @commands.command(name="limpar")
     async def clear(self,ctx, amount=None):
         try:
             valor = int(amount)

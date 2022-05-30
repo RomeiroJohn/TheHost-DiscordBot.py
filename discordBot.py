@@ -1,4 +1,3 @@
-import discord  #discord.py
 from discord.ext import commands
 from decouple import config
 import os
@@ -15,12 +14,3 @@ loadcogs(bot)
 
 apikey = config("apikey")
 bot.run(apikey)
-
-
-
-"""@bot.command(name="oi")
-async def sendhi(ctx):
-    name = ctx.author.name
-    response = "Olá," + name
-    
-    await ctx.send(response)"""
