@@ -7,15 +7,15 @@ class clearchat(commands.Cog):
         self.bot = bot
     
     @commands.command(name="limpar")
-    async def clear(self,ctx, amount=None):
+    async def clear(self,msg, amount=None):
         try:
             valor = int(amount)
         except:
-            await ctx.send("O valor: **`{}`** é invalido :thumbsup:".format(amount))
+            await msg.send("O valor: **`{}`** é invalido :thumbsup:".format(amount))
         if valor < 0:
-            await ctx.send("Favor, Digite números positivos")
+            await msg.send("Favor, Digite números positivos")
         else:
-            await ctx.channel.purge(limit=valor+1)
+            await msg.channel.purge(limit=valor+1)
 
 
 def setup(bot):
