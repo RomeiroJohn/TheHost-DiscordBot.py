@@ -12,7 +12,7 @@ class avatar(commands.Cog):
         embed.set_author(name=msg.author.name)
         embed.set_image(url=msg.author.avatar_url)
         await msg.send(embed=embed)
-        
+
 
 
 
