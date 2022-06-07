@@ -7,14 +7,22 @@ class avatar(commands.Cog):
         self.bot = bot
 
     @commands.command(name="avatar")
-    async def showavatar(self,msg):
-        embed = discord.Embed(title="This is your avatar")
-        embed.set_author(name=msg.author.name)
-        embed.set_image(url=msg.author.avatar_url)
-        await msg.send(embed=embed)
-
-
-
+    async def showavatar(self,msg,userAvatar: discord.User = None):
+        if userAvatar == None:
+            embed = discord.Embed(title="This is your avatar")
+            embed.set_author(name=msg.author.name)
+            embed.set_image(url=msg.author.avatar_url)
+            await msg.send(embed=embed)
+        else:
+            embed = discord.Embed(title="This is " + userAvatar.name + "'s avatar")
+            embed.set_author(name=userAvatar.name)
+            embed.set_image(url=userAvatar.avatar_url)
+            await msg.send(embed=embed)
+            
+            
+            
+            
+            
 
 
 def setup(bot):
